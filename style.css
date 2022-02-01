@@ -1,62 +1,96 @@
 *{
-margin: 0;
-padding: 0;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body{
     display: flex;
     justify-content: center;
-    background: blue;
-}
-
-.calculator{
-    margin-top: 60px;
-    width: 400px;
-    background-color: #555;
-    padding: 10px;
-    font-size: 0;
-    box-shadow: 1px 2px 5px black;
-    border-radius: 6px;
-}
-
-.title{
-    border-radius: 10px 10px 0 0s;
-    background: #ccc;
-    font-size: 50px;
-    text-align: center;
-
-}
-
-.screen{
-    display: flex;
-    width: 400px;
-    height: 100px;
-    background: #ccc;
     align-items: center;
+    min-height: 100vh;
+    background: #68a4ff;
+}
+.clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff url(./ck.jpg);
+    background-size: cover;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 15px solid #fff;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1),
+                0 20px 20px rgba(56, 56, 56, 0.2),
+                0 0 0 4px rgba(255, 255, 255, 1);
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #a4a6a7f3;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 100000;
+
+}
+.hour, .hr{
+    height: 295;
+    width: 0px;
+    display: flex;
+    justify-content: center;
+    transform: rotate(0deg);
+    align-items: center;
+}
+.minute, .mn {
+	height: 363px;
+	width: 0px;
+	display: flex;
+	justify-content: center;
+	transform: rotate(0deg);
+	align-items: cover;
+}
+.sec, .sc{
+    height: 280px;
+    width: 0px;
+    display: flex;
+    justify-content: center;
+    transform: rotate(0deg);
+    align-items: center;
+
+}
+.hr, .mn, .sc{
+    display: flex;
     justify-content: center;
 }
-
-.value{
-    width: 380px;
-    height: 80px;
-    background: #6df5aa;
-    font-size: 30px;
+.hr::before{
+   content: '';
+   width: 60px;
+   height: 350px;
+   background-image: url(./hourshand.png);
+   position: absolute;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
-
-.btn{
-    width: 100px;
-    height: 100px;
-    background: #555;
-    border-radius: 6px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
+.mn::before {
+	content: '';
+	width: 30px;
+	height: 200px;
+	background-image: url(./hour.png);
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
-.btn:hover{
-    background: #05d1fa;
-}
-
-.clear{
-    width: 200px;
-    background: #f80404;
+.sc::before{
+    content: '';
+   width: 200px;
+   height: 500px;
+   background-image: url(./secondhand.png);
+   position: absolute;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
